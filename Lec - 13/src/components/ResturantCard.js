@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom"
-
 import { IMG_CDN } from "../../config";
 
 const ResturantCard = ( { id , name,areaName, cloudinaryImageId,cuisines,avgRating, locality} ) => { 

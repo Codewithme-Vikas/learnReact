@@ -14,16 +14,28 @@ import ResturantDetail from "./components/ResturantDetail.js";
 // lazy loading, dynamic bundling , chunking , on demand import , dynamic import , code spiliting
 const InstaMart = lazy(() => import("./components/Instamart.js"))
 
-import { UserInfoContext } from "./context/UserInfoContext.js";
-
+import UserInfoContextProvider from "./context/UserInfoContext.js";
+import { cartContext } from "./context/UserInfoContext.js";
 
 const AppLayout = () => {
+    const [user, setUser] = useState({
+        user: {
+            name: "vikas",
+            email: "vikas@gmail.com"
+        }
+    });
+
+
     return (
         <React.Fragment>
-            <Header />
-            {/* render body or about page or contact page */}
-            <Outlet />
-            <Footer />
+            <UserInfoContextProvider>
+                <Header />
+                {/* render body or about page or contact page */}
+                <Outlet />
+                <cartContext.Provider value={13}>
+                    <Footer />
+                </cartContext.Provider>
+            </UserInfoContextProvider>
         </React.Fragment>
     )
 }
@@ -60,7 +72,7 @@ const router = createBrowserRouter([
             {
                 path: "instamart",
                 element: (
-                    <Suspense fallback={ <h1>Loading...</h1>}>
+                    <Suspense fallback={<h1>Loading...</h1>}>
                         <InstaMart />
                     </Suspense>
                 ),

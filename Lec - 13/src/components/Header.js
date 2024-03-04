@@ -20,7 +20,6 @@ const NavItems = () => (
 );
 
 const Header = () => {
-
     return (<div className="header">
         {Logo}
         <NavItems />

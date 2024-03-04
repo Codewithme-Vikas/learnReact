@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+
 import Shimmer from "./Shimmer";
 import useFetchResturantDetail from "../hooks/useFetchResturantDetail";
 
@@ -11,7 +12,6 @@ const ResturantDetail = () => {
     const resturant = useFetchResturantDetail(params.id);
     
     // console.log("resturant detail  after, resturant value is - ", resturant )
-
 
 
     return !resturant ? <Shimmer/> : (
@@ -35,6 +35,7 @@ const ResturantDetail = () => {
                     })
                 }
             </ul>
+
         </div>
     )
 };

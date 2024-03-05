@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.nav-items ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-items>ul li {
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition-duration: 100ms;
+}
+
+.nav-items>ul li:hover {
+    font-size: 19px;
+}
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+.card {
+    /* box-shadow: 0 0 5px 1px black; */
+    padding: 5px 10px;
+    width: 200px;
+    margin: 10px;
+    transition: all 150ms;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card>img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    /* border: 1px solid red; */
+    box-shadow: 0 0 1px 0 black;
+    border-radius: 20px;
+}
+
+.search-container {
+    box-shadow: 0 0 2px 1px solid black;
+    border-radius: 4px;
+    margin: 10px 20px;
+}
+
+input {
+    padding: 10px 20px;
+    outline: none;
+    border-radius: 10px;
+    caret-color: blue;
+
+}
+
+button {
+    margin: 0 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid grey;
+    cursor: pointer;
+    padding: 10px;
+}
+
+button:hover {
+    border-color: rgb(150, 203, 250);
+}
+
+button:focus {
+    border-radius: 20px;
+}
+
+.card-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Shimmer UI */
+.shimmer-cards-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.shimmer-card {
+    width: 200px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.shimmer-img {
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(90deg, transparent, #f3f3f3, transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+.shimmer-text {
+    height: 20px;
+    margin: 10px;
+    background: linear-gradient(90deg, transparent, #e6e6e6, transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    25% {
+        background-position: 200% 0;
+    }
+
+    50% {
+        background-position: -200% 0;
+    }
+
+    75% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+/* resturant detail */
+
+.returant-detail-container{
+    display: flex;
+    gap: 50px;
+}
+.resturant-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+a{
+    text-decoration: none;
+}
